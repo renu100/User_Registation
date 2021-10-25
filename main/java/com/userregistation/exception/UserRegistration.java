@@ -113,5 +113,14 @@ public class UserRegistration {
 			return "sad";
 		}
 	}
+	
+	public Boolean emailAddressSample1(String emailId) {
+		String regex = "^[a-z0-9]{3,}+([_+-.][a-z0-9]{3,}+)*@[a-z0-9]+.[a-z]{2,3}+(.[a-z]{2,3}){0,1}$";
+		if (Pattern.matches(regex, emailId)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 
 }
