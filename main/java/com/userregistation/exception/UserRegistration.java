@@ -8,95 +8,110 @@ public class UserRegistration {
 	/*
 	 * create method to check first name
 	 */
-	public boolean firstName(String firstName) {
+	public String firstName(String firstName) {
 		String regex = "^[A-Z]{1}[a-z]{3,}";
-		Pattern pattern = Pattern.compile(regex);
-		Matcher match = pattern.matcher(firstName);
-		return match.matches();
-
+		if (Pattern.matches(regex, firstName)) {
+			return "happy";
+		} else {
+			return "sad";
+		}
 	}
 
 	/*
 	 * create method to check last name
 	 */
-	public boolean lastName(String lastName) {
+	public String lastName(String lastName) {
 		String regex = "^[A-Z]{1}[a-z]{4,}";
-		Pattern pattern = Pattern.compile(regex);
-		Matcher matcher = pattern.matcher(lastName);
-		return matcher.matches();
+		if (Pattern.matches(regex, lastName)) {
+			return "happy";
+		} else {
+			return "sad";
+		}
 	}
 
 	/*
 	 * create method to check email address
 	 */
-	public boolean emailAddress(String email) {
+	public String emailAddress(String email) {
 		String regex = "^[a-z0-9]{3,}+([_+-.][a-z0-9]{3,}+)*@[a-z0-9]+.[a-z]{2,3}+(.[a-z]{2,3}){0,1}$";
-		Pattern pattern = Pattern.compile(regex);
-		Matcher matcher = pattern.matcher(email);
-		return matcher.matches();
+		if (Pattern.matches(regex, email)) {
+			return "happy";
+		} else {
+			return "sad";
+		}
 	}
 
 	/*
 	 * create method to check mobile number
 	 */
-	public boolean phoneNumber(String phoneNumber) {
+	public String phoneNumber(String phoneNumber) {
 		String regex = "^[0-9]{2}\\s{1}[0-9]{10}$";
-		Pattern pattern = Pattern.compile(regex);
-		Matcher matcher = pattern.matcher(phoneNumber);
-		return matcher.matches();
+		if (Pattern.matches(regex, phoneNumber)) {
+			return "happy";
+		} else {
+			return "sad";
+		}
 	}
 
 	/*
 	 * create method to check minimum 8 Characters
 	 */
-	public boolean passwordRule1(String password) {
+	public String passwordRule1(String password) {
 		String regex = "^[0-9a-zA-Z]{8,}$";
-		Pattern pattern = Pattern.compile(regex);
-		Matcher matcher = pattern.matcher(password);
-		return matcher.matches();
+		if (Pattern.matches(regex, password)) {
+			return "happy";
+		} else {
+			return "sad";
+		}
 	}
 
 	/*
 	 * Method to check Should have at least 1 Upper Case
 	 */
-	public boolean passwordRule2(String password) {
+	public String passwordRule2(String password) {
 		String regex = "^[A-Z]{1}[a-z]{8,}$";
-		Pattern pattern = Pattern.compile(regex);
-		Matcher matcher = pattern.matcher(password);
-		return matcher.matches();
-
+		if (Pattern.matches(regex, password)) {
+			return "happy";
+		} else {
+			return "sad";
+		}
 	}
 
 	/*
 	 * Should have at least 1 numeric number in the password
 	 */
-	public boolean passwordRule3(String password) {
+	public String passwordRule3(String password) {
 		String regex = "^(?=.*[A-Z]){1}(?=.*[a-z])(?=.*[0-9]).{8,}$";
-		Pattern pattern = Pattern.compile(regex);
-		Matcher matcher = pattern.matcher(password);
-		return matcher.matches();
-
+		if (Pattern.matches(regex, password)) {
+			return "happy";
+		} else {
+			return "sad";
+		}
 	}
 
 	/*
 	 * Password has exactly 1 Special Character
 	 */
-	public boolean passwordRule4(String password) {
+	public String passwordRule4(String password) {
 		String regex = "^[A-Z]{1}[0-9a-zA-Z!,@#$&*().]{8,}$";
-		Pattern pattern = Pattern.compile(regex);
-		Matcher matcher = pattern.matcher(password);
-		return matcher.matches();
+		if (Pattern.matches(regex, password)) {
+			return "happy";
+		} else {
+			return "sad";
+		}
 	}
 
 	/*
 	 * create a method for some sample e-mails
 	 */
 
-	public boolean emailAddressSample(String emailId) {
+	public String emailAddressSample(String emailId) {
 		String regex = "^[a-z0-9]{3,}+([_+-.][a-z0-9]{3,}+)*@[a-z0-9]+.[a-z]{2,3}+(.[a-z]{2,3}){0,1}$";
-		Pattern pattern = Pattern.compile(regex);
-		Matcher matcher = pattern.matcher(emailId);
-		return matcher.matches();
+		if (Pattern.matches(regex, emailId)) {
+			return "happy";
+		} else {
+			return "sad";
+		}
 	}
 
 }
