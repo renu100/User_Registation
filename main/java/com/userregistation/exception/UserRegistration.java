@@ -67,4 +67,15 @@ public class UserRegistration {
 
 	}
 
+	/*
+	 * Should have at least 1 numeric number in the password
+	 */
+	public boolean passwordRule3(String password) {
+		String regex = "^(?=.*[A-Z]){1}(?=.*[a-z])(?=.*[0-9]).{8,}$";
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(password);
+		return matcher.matches();
+
+	}
+
 }

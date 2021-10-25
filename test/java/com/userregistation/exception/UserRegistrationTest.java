@@ -92,4 +92,18 @@ public class UserRegistrationTest {
 		Assert.assertEquals(false, result);
 	}
 
+	// Test case for valid password it contains atleast 1 numeric number
+	@Test
+	public void givenPasswordRule3_WhenInFormat_ShouldReturnTrue() {
+		boolean result = userRegistration.passwordRule3("Rajendra22");
+		Assert.assertEquals(true, result);
+	}
+
+	// Test case for invalid password that not contains atleast 1 numeric number
+	@Test
+	public void givenPasswordRule3_WhenOurOfFormat_ShouldReturnFalse() {
+		boolean result = userRegistration.passwordRule3("Rajendra");
+		Assert.assertEquals(false, result);
+	}
+
 }
