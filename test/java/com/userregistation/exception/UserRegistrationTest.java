@@ -78,4 +78,18 @@ public class UserRegistrationTest {
 		Assert.assertEquals(false, result);
 	}
 
+	// Test case for valid password it contains atleast 1 upper case
+	@Test
+	public void givenPasswordRule2_WhenInFormat_ShouldReturnTrue() {
+		boolean result = userRegistration.passwordRule2("Abcdefghij");
+		Assert.assertEquals(true, result);
+	}
+
+	// Test case for invalid password that not contains atleast 1 Upper Case
+	@Test
+	public void givenPasswordRule2_WhenOurOfFormat_ShouldReturnFalse() {
+		boolean result = userRegistration.passwordRule2("abcdefghij");
+		Assert.assertEquals(false, result);
+	}
+
 }
