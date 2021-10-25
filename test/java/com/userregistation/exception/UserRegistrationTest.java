@@ -120,4 +120,18 @@ public class UserRegistrationTest {
 		Assert.assertEquals(false, result);
 	}
 
+	// Test case for valid Email id
+	@Test
+	public void givenEmail4_WhenInFormat_ShouldReturnTrue() {
+		boolean result = userRegistration.emailAddressSample("abc@1.com");
+		Assert.assertEquals(true, result);
+	}
+
+	// Test case for invalid Email id
+	@Test
+	public void givenEmail4_WhenOurOfFormat_ShouldReturnFalse() {
+		boolean result = userRegistration.emailAddressSample("aabc.@gmail.com");
+		Assert.assertEquals(false, result);
+	}
+
 }
