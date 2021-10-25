@@ -64,4 +64,18 @@ public class UserRegistrationTest {
 		Assert.assertEquals(false, result);
 	}
 
+	// Test case for valid password minimum 8 Characters
+	@Test
+	public void givenPassword_WhenInFormat_ShouldReturnTrue() {
+		boolean result = userRegistration.passwordRule1("abcdegfhij");
+		Assert.assertEquals(true, result);
+	}
+
+	// Test case for invalid password minimum 8 Characters
+	@Test
+	public void givenPassword_WhenOurOfFormat_ShouldReturnFalse() {
+		boolean result = userRegistration.passwordRule1("abcd");
+		Assert.assertEquals(false, result);
+	}
+
 }
