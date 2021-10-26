@@ -17,8 +17,13 @@ public class UserRegistrationTest {
 	// Test case for invalid first name
 	@Test
 	public void givenFirstName_WhenOurOfFormat_ShouldReturnFlase() {
-		String result = userRegistration.firstName("renu");
-		Assert.assertEquals("sad", result);
+		try {
+			String result = userRegistration.firstName("renu");
+			Assert.assertEquals("happy", result);
+		} catch (InvalidUserDetailsException e) {
+			System.out.println("invalid first name");
+		}
+
 	}
 
 	// Test case for valid last name
@@ -31,8 +36,12 @@ public class UserRegistrationTest {
 	// Test case for invalid last name
 	@Test
 	public void givenLastName_WhenOurOfFormat_ShouldReturnFalse() {
-		String result = userRegistration.lastName("chandraker");
-		Assert.assertEquals("sad", result);
+		try {
+			String result = userRegistration.lastName("chandraker");
+			Assert.assertEquals("sad", result);
+		} catch (InvalidUserDetailsException e) {
+			System.out.println("Invalid last name");
+		}
 
 	}
 
@@ -46,8 +55,12 @@ public class UserRegistrationTest {
 	// Test case for invalid Email address
 	@Test
 	public void givenEmail_WhenOurOfFormat_ShouldReturnFalse() {
-		String result = userRegistration.emailAddress("abc()*gmail.com");
-		Assert.assertEquals("sad", result);
+		try {
+			String result = userRegistration.emailAddress("abc()*gmail.com");
+			Assert.assertEquals("sad", result);
+		} catch (InvalidUserDetailsException e) {
+			System.out.println("Invalid email id");
+		}
 	}
 
 	// Test case for valid mobile number
@@ -60,8 +73,12 @@ public class UserRegistrationTest {
 	// Test case for invalid mobile number
 	@Test
 	public void givenPhoneNumber_WhenOurOfFormat_ShouldReturnFlase() {
-		String result = userRegistration.phoneNumber("+91 9604315270");
-		Assert.assertEquals("sad", result);
+		try {
+			String result = userRegistration.phoneNumber("+91 9604315270");
+			Assert.assertEquals("sad", result);
+		} catch (InvalidUserDetailsException e) {
+			System.out.println("Invalid mobile number");
+		}
 	}
 
 	// Test case for valid password minimum 8 Characters
@@ -74,8 +91,12 @@ public class UserRegistrationTest {
 	// Test case for invalid password minimum 8 Characters
 	@Test
 	public void givenPassword_WhenOurOfFormat_ShouldReturnFalse() {
-		String result = userRegistration.passwordRule1("abcd");
-		Assert.assertEquals("sad", result);
+		try {
+			String result = userRegistration.passwordRule1("abcd");
+			Assert.assertEquals("sad", result);
+		} catch (InvalidUserDetailsException e) {
+			System.out.println("Invalid password rule1");
+		}
 	}
 
 	// Test case for valid password it contains atleast 1 upper case
@@ -88,8 +109,12 @@ public class UserRegistrationTest {
 	// Test case for invalid password that not contains atleast 1 Upper Case
 	@Test
 	public void givenPasswordRule2_WhenOurOfFormat_ShouldReturnFalse() {
-		String result = userRegistration.passwordRule2("abcdefghij");
-		Assert.assertEquals("sad", result);
+		try {
+			String result = userRegistration.passwordRule2("abcdefghij");
+			Assert.assertEquals("sad", result);
+		} catch (InvalidUserDetailsException e) {
+			System.out.println("Invalid password rule2");
+		}
 	}
 
 	// Test case for valid password it contains atleast 1 numeric number
@@ -102,8 +127,12 @@ public class UserRegistrationTest {
 	// Test case for invalid password that not contains atleast 1 numeric number
 	@Test
 	public void givenPasswordRule3_WhenOurOfFormat_ShouldReturnFalse() {
-		String result = userRegistration.passwordRule3("Rajendra");
-		Assert.assertEquals("sad", result);
+		try {
+			String result = userRegistration.passwordRule3("Rajendra");
+			Assert.assertEquals("sad", result);
+		} catch (InvalidUserDetailsException e) {
+			System.out.println("Invalid password rule3");
+		}
 	}
 
 	// Test case for valid password it contains atleast 1 Special Character
@@ -116,8 +145,12 @@ public class UserRegistrationTest {
 	// Test case for invalid password that not contains atleast 1 Special Character
 	@Test
 	public void givenPasswordRule4_WhenOurOfFormat_ShouldReturnFalse() {
-		String result = userRegistration.passwordRule4("Rajendra");
-		Assert.assertEquals("sad", result);
+		try {
+			String result = userRegistration.passwordRule4("Rajendra");
+			Assert.assertEquals("sad", result);
+		} catch (InvalidUserDetailsException e) {
+			System.out.println("Invalid password rule4");
+		}
 	}
 
 	// Test case for valid Email id
@@ -130,8 +163,12 @@ public class UserRegistrationTest {
 	// Test case for invalid Email id
 	@Test
 	public void givenEmail4_WhenOurOfFormat_ShouldReturnFalse() {
-		String result = userRegistration.emailAddressSample("aabc.@gmail.com");
-		Assert.assertEquals("sad", result);
+		try {
+			String result = userRegistration.emailAddressSample("aabc.@gmail.com");
+			Assert.assertEquals("sad", result);
+		} catch (InvalidUserDetailsException e) {
+			System.out.println("Invalid password");
+		}
 	}
 
 }
